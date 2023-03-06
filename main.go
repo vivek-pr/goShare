@@ -10,7 +10,7 @@ import (
 
 func main() {
 	router := gin.Default()
-	router.LoadHTMLGlob("template/*")
+	router.LoadHTMLGlob("templates/*")
 
 	router.GET("/", func(c *gin.Context) {
         c.HTML(http.StatusOK, "index.tmpl", gin.H{})
