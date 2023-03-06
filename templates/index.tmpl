@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gin File Uploader</title>
+</head>
+<body>
+    <h1>Gin File Uploader</h1>
+
+    <h2>Upload a file</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Upload</button>
+    </form>
+
+    <hr>
+
+    <h2>Available files</h2>
+    <ul>
+        {{ range .Files }}
+            <li><a href="/download/{{ . }}">{{ . }}</a></li>
+        {{ end }}
+    </ul>
+</body>
+</html>
